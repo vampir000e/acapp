@@ -35,7 +35,7 @@ class AcGameMenu {
             outer.hide();
             outer.root.playground.show();
         });
-        this.$multi_mode.click(function() {
+        this.$multi_mode.click(function(){
             console.log("click multi mode");
         });
         this.$settings.click(function(){
@@ -54,8 +54,8 @@ class AcGameMenu {
 class AcGamePlayground {
     constructor(root) {
         this.root = root;
-        this.$playground = $(`<div>游戏界面</div>`);
-        this.hide();
+        this.$playground = $(`<div class="ac-game-playground"></div>`);
+        // this.hide();
         this.root.$ac_game.append(this.$playground);
 
         this.start();
@@ -75,11 +75,11 @@ class AcGamePlayground {
         this.$playground.hide();
     }
 }
-class AcGame {
+export class AcGame {
     constructor(id) {
         this.id = id;
         this.$ac_game = $('#' + id);
-        this.menu = new AcGameMenu(this);
+        // this.menu = new AcGameMenu(this);
         this.playground = new AcGamePlayground(this);
 
         this.start();
